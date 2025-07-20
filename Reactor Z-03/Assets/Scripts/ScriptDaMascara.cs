@@ -12,6 +12,7 @@ public class ScriptDaMascara : MonoBehaviour
             if (!jogador.estaComMascara)
             {
                 jogador.EquiparMascara();
+                UIInteracao.instancia.EsconderMensagem();
                 Destroy(gameObject); // Máscara desaparece após equipar
             }
         }
@@ -23,6 +24,7 @@ public class ScriptDaMascara : MonoBehaviour
         if (jogador != null)
         {
             jogadorNaArea = true;
+            UIInteracao.instancia.MostrarMensagem("Aperte E para equipar máscara");
         }
     }
 
@@ -32,6 +34,7 @@ public class ScriptDaMascara : MonoBehaviour
         {
             jogadorNaArea = false;
             jogador = null;
+            UIInteracao.instancia.EsconderMensagem();
         }
     }
 }
