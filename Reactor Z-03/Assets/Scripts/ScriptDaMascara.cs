@@ -2,17 +2,36 @@ using UnityEngine;
 
 public class ScriptDaMascara : MonoBehaviour
 {
-    
+    private bool jogadorNaArea = false;
+    private VidaDoJogador jogador;
+        
+    void Update()
+    {
+        if (jogadorNaArea && Input.GetKeyDown(KeyCode.E))
+        {
+            if (!jogador.estaComMascara)
+            {
+                jogador.EquiparMascara();
+                Destroy(gameObject); // Máscara desaparece após equipar
+            }
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Pegando os dados do script "VidaDoJogador" e os acessando aqui
-        VidaDoJogador jogador = other.GetComponent<VidaDoJogador>();
-        
-        // verificando se o jogador está sem a mascará e a equipando
+        jogador = other.GetComponent<VidaDoJogador>();
         if (jogador != null)
         {
-            jogador.EquiparMascara();
-            Destroy(gameObject); // A máscara desaparece depois de pegar
+            jogadorNaArea = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.GetComponent<VidaDoJogador>() != null)
+        {
+            jogadorNaArea = false;
+            jogador = null;
         }
     }
 }

@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Flashlight_small_range_sprite_sheet_0: 2698584076409416662
+      Flashlight_small_range_sprite_sheet_1: -5662343371558286485
+      Flashlight_small_range_sprite_sheet_2: -8705089520068019660
+      Flashlight_small_range_sprite_sheet_3: 1074817900672336167
+      Flashlight_small_range_sprite_sheet_4: 5330027718179062093
+      Flashlight_small_range_sprite_sheet_5: 4688439456737618945
+      Flashlight_small_range_sprite_sheet_6: -9051235439429130652
+      Flashlight_small_range_sprite_sheet_7: 2612401168877140238
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
